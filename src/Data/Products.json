@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": 1,
+    "name": "Kids Denim Jacket",
+    "categoryId": 1,
+    "price": 29.99,
+    "size": ["4Y", "6Y", "8Y"],
+    "stock": 12,
+    "image": "/images/denim-jacket.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Floral Summer Dress",
+    "categoryId": 2,
+    "price": 24.99,
+    "size": ["4Y", "6Y", "8Y"],
+    "stock": 10,
+    "image": "/images/floral-dress.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Baby Cotton Romper",
+    "categoryId": 3,
+    "price": 18.99,
+    "size": ["0-3M", "3-6M", "6-12M"],
+    "stock": 15,
+    "image": "/images/baby-romper.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Kids Baseball Cap",
+    "categoryId": 4,
+    "price": 12.99,
+    "size": ["S", "M"],
+    "stock": 20,
+    "image": "/images/baseball-cap.jpg"
+  }
+]

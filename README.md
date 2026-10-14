@@ -1,75 +1,118 @@
-# React + TypeScript + Vite
+# Kids Clothing Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend e-commerce web application for a children's clothing store built using React, TypeScript, Context API, Tailwind CSS, and mock JSON data.
 
-Currently, two official plugins are available:
+## Current Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Product listing
+- Product categories and filtering
+- Reusable product cards
+- Shopping cart
+- Add products to cart
+- Increase and decrease product quantity
+- Remove products from cart
+- Cart item count
+- Total cart bill calculation
+- Light and dark mode
+- Theme persistence using localStorage
+- Cart persistence using sessionStorage
+- Context API for shared theme and cart state
+- TypeScript interfaces for application data
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Context API
+- localStorage
+- sessionStorage
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+├── context/
+├── Data/
+│   ├── Users.json
+│   ├── Products.json
+│   ├── ShoppingCart.json
+│   ├── Categories.json
+│   └── data.ts
+├── interfaces/
+│   ├── User.ts
+│   ├── Product.ts
+│   ├── Category.ts
+│   └── ShoppingCart.ts
+├── pages/
+│   ├── HomePage.tsx
+│   └── CartPage.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Mock Data
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The project does not use a backend or database.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Application data is stored locally inside the `src/Data` folder using JSON files.
 
+## TypeScript Interfaces
+
+Interfaces are used to define and validate the structure of:
+
+- Users
+- Products
+- Categories
+- Shopping carts
+- Cart items
+
+## Context API
+
+Two contexts are currently implemented:
+
+### ThemeContext
+
+Manages:
+
+- Light mode
+- Dark mode
+- Theme switching
+- Theme persistence using localStorage
+
+### CartContext
+
+Manages:
+
+- Cart items
+- Add to cart
+- Increase quantity
+- Decrease quantity
+- Remove from cart
+
+## Storage
+
+### localStorage
+
+Used to persist the selected theme even after the browser is closed and reopened.
+
+### sessionStorage
+
+Used to temporarily persist shopping cart data during the browser session.
+
+## Run the Project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
 ```
